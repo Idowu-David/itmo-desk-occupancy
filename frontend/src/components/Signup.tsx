@@ -4,44 +4,47 @@ import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
-    <div className="bg-white flex flex-col items-center justify-center h-svh">
-      <div className="py-4 flex flex-col items-center w-11/12">
+    <div className="bg-white flex flex-col items-center justify-center h-svh lg:w-full">
+      <div className="py-4 flex flex-col items-center w-[90%] max-w-md lg:max-w-[798px]">
         <h1 className="text-[50px] font-medium text-center text-[#020617]">
           Welcome Back!
         </h1>
-        <p className="text-gray-600 mt-4 text-xl">Please log in to continue</p>
-        <div className="space-y-5 w-full mt-14">
-          <button className="bg-[#F1F5F9] py-3 w-full text-center rounded-md font-semibold flex gap-3 items-center justify-center transition-colors hover:bg-gray-300">
+        <p className="text-gray-600 mt-4 text-[18px]">Please log in to continue</p>
+        <div className="gap-5 w-full mt-14 flex flex-col items-center lg:flex-row lg:gap-6 lg:justify-center">
+          <button className="bg-[#F1F5F9] py-3 w-full text-center rounded-md font-semibold flex gap-3 items-center justify-center transition-colors hover:bg-gray-300 flex-1">
             <FcGoogle className="text-xl" />
             <span className="font-medium text-[#0F172A]">
               Continue with Google
             </span>
           </button>
 
-          <button className="bg-[#F1F5F9] py-3 w-full text-center rounded-md font-semibold flex gap-3 items-center justify-center transition-colors hover:bg-gray-300">
+          <button className="bg-[#F1F5F9] py-3 w-full text-center rounded-md font-semibold flex gap-3 items-center justify-center transition-colors hover:bg-gray-300 flex-1">
             <FaLinkedin className="text-xl text-[#0077B5]" />
             <span className="font-medium text-[#0F172A]">
               Continue with Linkedln
             </span>
           </button>
         </div>
-        <div className="flex items-center w-full my-6">
+        <div className="flex items-center w-full my-6 max-w-md">
           <div className="flex-1 h-px bg-gray-200"></div>
           <span className="px-4 text-gray-900 font-medium">OR</span>
           <div className="flex-1 h-px bg-gray-200"></div>
         </div>
-        <form className="flex flex-row gap-2 justify-center items-center min-h-20 w-4/5">
+        <form className="flex flex-row gap-2 justify-center items-center w-full">
           <input
             placeholder="Enter your email address"
-            className="pl-4 rounded-md h-12 border border-[#E2E8F0] w-full max-w-md"
+            className="pl-4 rounded-md h-12 border border-[#E2E8F0] flex-1"
           />
           <button className="bg-[#2C5CC5] text-white rounded-md h-12 px-4">
             Continue
           </button>
         </form>
-        <p className="text-lg mt-8 text-[#64748B]">
-          Don't have an account? {" "}
-          <Link to="/signup" className="text-[#2C5CC5] underline"> Sign up</Link>
+        <p className="text-[16px] mt-8 text-[#64748B]">
+          Don't have an account?{" "}
+          <Link to="/signup" className="text-[#2C5CC5] underline">
+            {" "}
+            Sign up
+          </Link>
         </p>
       </div>
     </div>
