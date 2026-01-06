@@ -9,7 +9,9 @@ const Signup = () => {
         <h1 className="text-[50px] font-medium text-center text-[#020617]">
           Welcome Back!
         </h1>
-        <p className="text-gray-600 mt-4 text-[18px]">Please log in to continue</p>
+        <p className="text-gray-600 mt-4 text-[18px]">
+          Please log in to continue
+        </p>
         <div className="gap-5 w-full mt-14 flex flex-col items-center lg:flex-row lg:gap-6 lg:justify-center">
           <button className="bg-[#F1F5F9] py-3 w-full text-center rounded-md font-semibold flex gap-3 items-center justify-center transition-colors hover:bg-gray-300 flex-1">
             <FcGoogle className="text-xl" />
@@ -33,7 +35,7 @@ const Signup = () => {
         <form className="flex flex-row gap-2 justify-center items-center w-full">
           <input
             placeholder="Enter your email address"
-            className="pl-4 rounded-md h-12 border border-[#E2E8F0] flex-1"
+            className="pl-4 rounded-md h-12 border border-[#E2E8F0] flex-1 outline-none transition-all focus:border-[#2C5CC5] focus:ring-1 focus:ring-[#2C5CC5]"
           />
           <button className="bg-[#2C5CC5] text-white rounded-md h-12 px-4">
             Continue
