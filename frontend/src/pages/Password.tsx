@@ -1,11 +1,27 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import clsx from 'clsx';
 
-const Login = () => {
+const Password = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Clicked")
+    navigate("/dashboard")
+
+    
+    // Verification for the password and login navigation to the dashboard
+    // navigate("/password", { state: { email: email } });
+  };
 
   return (
-    <div className="bg-white flex flex-col items-center justify-center h-svh lg:w-full">
+    <div className="bg-white flex flex-col items-center justify-start pt-16 h-svh lg:w-full lg:justify-center md:pt-0">
       <div className="py-4 flex flex-col items-center w-[90%] max-w-md">
         {/* add max-w */}
         <h1 className="text-[50px] font-medium text-center text-[#020617]">
@@ -28,27 +44,34 @@ const Login = () => {
               {showPassword ? "Hide" : "Show"}
             </button>
 
-            <div className="flex flex-col gap-8">
+            <form className="flex flex-col gap-8" onSubmit={handleLogin}>
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
                 className="w-full pl-4 py-3 border border-black rounded-md focus:outline-none focus:border-[#2C5CC5] focus:ring-1 focus:ring-[#2C5CC5]"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
-              <button className="bg-[#2C5CC5] text-white rounded-md py-[14px] w-full hover:bg-[#5781dd]">
+              <button
+                disabled={!password}
+                className={clsx(
+                  "bg-[#2C5CC5] text-white rounded-md py-[14px] w-full disabled:bg-gray-400",
+                )}
+              >
                 Login
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
         <div className="text-sm text-gray-500 hover:text-black flex w-full mt-2">
           <Link to="/">← Back to email</Link>
         </div>
-        <p className="text-[16px] mt-8 text-[#64748B]">
-          Don't have an account?{" "}
+        <p className="text-[16px] mt-9 text-[#64748B]">
+          Can’t remember your password?{" "}
           <Link to="/signup" className="text-[#2C5CC5] underline">
             {" "}
-            Sign up
+            Reset Password
           </Link>
         </p>
       </div>
@@ -56,4 +79,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Password;
